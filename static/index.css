@@ -1,0 +1,37 @@
+.menu {
+    list-style-type: none;
+    padding: 0;
+    background-color: #ff0000;
+    height: 4em;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #ff00dd;
+    height: 100%;
+    margin: 0px;
+    font-size: 1.6em;
+    width: 15%;
+    text-align: center;
+}
+
+.menu li:hover {
+    background-color: #ff00ff;
+}
+
+.menu li a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+body {
+    background-color: #00ff6a;
+    margin: 0px;
+}
