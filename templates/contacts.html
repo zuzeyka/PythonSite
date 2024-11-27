@@ -3,10 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us - Your Company Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --accent-color: #ff006e;
+            --background-color: #f8f9fa;
+            --text-color: #212529;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .menu li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .menu li a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .page-title {
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .contact-value {
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+            }
+            
+            .menu li a {
+                text-align: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-value {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <title>+380 12 345 6789</title>
-    <title>support@nike.com</title>
+    <nav>
+        <ul class="menu">
+            <li><a href="/shop">Shop</a></li> 
+            <li><a href="/blog">Blog</a></li> 
+            <li><a href="/services">Services</a></li> 
+            <li><a href="/contacts">Contacts</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1 class="page-title">Контакты</h1>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">Номер</span>
+                <span class="contact-value">+37356838582</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Адрес</span>
+                <span class="contact-value">Odesa. UKRAINE. Volodymerskaya 37</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Mail</span>
+                <span class="contact-value">youtube@work.md</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

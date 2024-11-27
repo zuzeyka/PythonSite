@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <title>Nike - мировой лидер в производстве спортивной обуви, одежды и аксессуаров. Их инновационные технологии и стильный дизайн делают их продукцию популярной среди спортсменов и любителей активного образа жизни по всему миру.</title>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='index.css')}}"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+        <div class="main-about">
+            <div class="text-block">
+                <div class="main-text">Only the best is good enough</div>
+                <div class="secondary-text">
+                    As children shape their own worlds with LEGO bricks, we play
+                    our part in having a positive impact on the world they live
+                    in today and will inherit in the future.
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
