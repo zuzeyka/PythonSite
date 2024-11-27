@@ -1,37 +1,110 @@
-.menu {
-    list-style-type: none;
-    padding: 0;
-    background-color: #ff0000;
-    height: 4em;
-    margin: 0px;
-    display: flex;
-    justify-content: space-between;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Caveat&display=swap');
 
-.menu li {
-    display: inline-block;
-    margin-right: 10px;
-    background-color: #ff00dd;
-    height: 100%;
-    margin: 0px;
-    font-size: 1.6em;
-    width: 15%;
-    text-align: center;
-}
-
-.menu li:hover {
-    background-color: #ff00ff;
-}
-
-.menu li a {
-    display: block;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #8338ec;
+  --accent-color: #ff006e;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
 }
 
 body {
-    background-color: #00ff6a;
-    margin: 0px;
+  background-color: var(--background-color);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  background-color: var(--primary-color);
+  height: 4em;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.menu li:hover {
+  background-color: var(--secondary-color);
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0 1.5em;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+
+.menu li a:hover {
+  transform: translateY(-2px);
+}
+
+.contactes1 {
+  font-size: 4rem;
+  color: var(--primary-color);
+  padding: 1rem 1.5rem;
+  margin: 0;
+  background-color: var(--background-color);
+  font-family: "Caveat", sans-serif;
+  text-align: center;
+}
+
+.contactes2, .contactes22, .contactes3, .contactes4 {
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contactes2 { color: var(--accent-color); }
+.contactes22 { color: var(--secondary-color); }
+.contactes3 { color: var(--primary-color); }
+.contactes4 { color: var(--text-color); }
+
+.line {
+  margin: 1.5rem 1.5rem;
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    padding: 1em;
+  }
+
+  .contactes1 {
+    font-size: 3rem;
+  }
+
+  .contactes2, .contactes22, .contactes3, .contactes4 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

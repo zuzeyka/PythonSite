@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <title>Лучший магазин одежды:</title>
-    <a href="https://www.nike.com/">Вот и магазин</a>
-</body>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Лучший магазин одежды</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='shop.css')}}"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="card-content">
+                {% for product in products %}
+                <div class="container">
+                    <img
+                        class="container-image"
+                        src="{{ product.image_url }}"
+                        alt="{{ product.name }}"
+                    />
+                    <div class="container-text">
+                        <h3>{{ product.name }}</h3>
+                        <h4>{{ product.description }}</h4>
+                        <div class="price-container">
+                            <span class="price">{{ product.price }}$</span>
+                            <a href="/random" class="cta-button">Купить</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </body>
 </html>
