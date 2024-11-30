@@ -1,110 +1,324 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Caveat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Caveat&display=swap");
 
 :root {
-  --primary-color: #3a86ff;
-  --secondary-color: #8338ec;
-  --accent-color: #ff006e;
-  --background-color: #f8f9fa;
-  --text-color: #212529;
+    --primary-color: #f50057;
+    --secondary-color: #3f51b5;
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --text-color-secondary: #949494;
+    --nav-hover-color: #c51162;
+    --accent-color: #ff006e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background-color);
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    line-height: 1.6;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 45px;
+}
+.product-card {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 13px;
+}
+.product-name {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+.product-description {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #666;
+}
+.product-price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+.cta-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.random-link {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.random-link:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+.cta-button:hover {
+    background-color: #2980b9;
+}
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #27ae60;
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 1rem 0;
 }
 
 .menu {
-  list-style-type: none;
-  padding: 0;
-  background-color: var(--primary-color);
-  height: 4em;
-  margin: 0;
-  display: flex;
-  justify-content: space-around;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    color: var(--text-color);
+    padding: 0;
+    background-color: var(--primary-color);
+    height: 4em;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu li {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  transition: background-color 0.3s ease;
-}
-
-.menu li:hover {
-  background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .menu li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 0 1.5em;
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 400;
-  transition: transform 0.2s ease;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0 1.5em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: transform 0.2s ease;
 }
 
 .menu li a:hover {
-  transform: translateY(-2px);
+    background-color: var(--nav-hover-color);
+}
+
+.page-title {
+    font-family: "Caveat", cursive;
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.contact-info {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact-value {
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
 .contactes1 {
-  font-size: 4rem;
-  color: var(--primary-color);
-  padding: 1rem 1.5rem;
-  margin: 0;
-  background-color: var(--background-color);
-  font-family: "Caveat", sans-serif;
-  text-align: center;
+    font-size: 4rem;
+    color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    margin: 0;
+    background-color: var(--background-color);
+    font-family: "Caveat", sans-serif;
+    text-align: center;
 }
 
-.contactes2, .contactes22, .contactes3, .contactes4 {
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
-  background-color: var(--background-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.contactes2,
+.contactes22,
+.contactes3,
+.contactes4 {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.contactes2 { color: var(--accent-color); }
-.contactes22 { color: var(--secondary-color); }
-.contactes3 { color: var(--primary-color); }
-.contactes4 { color: var(--text-color); }
+.contactes2 {
+    color: var(--accent-color);
+}
+.contactes22 {
+    color: var(--secondary-color);
+}
+.contactes3 {
+    color: var(--primary-color);
+}
+.contactes4 {
+    color: var(--text-color);
+}
 
 .line {
-  margin: 1.5rem 1.5rem;
-  border: none;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 1.5rem;
+    border: none;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 0.5rem 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .number {
+        font-size: 3rem;
+    }
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    height: auto;
-  }
+    .menu {
+        flex-direction: column;
+        height: auto;
+    }
 
-  .menu li {
-    width: 100%;
-  }
+    .menu li {
+        width: 100%;
+    }
 
-  .menu li a {
-    padding: 1em;
-  }
+    .menu li a {
+        padding: 1em;
+    }
 
-  .contactes1 {
-    font-size: 3rem;
-  }
+    .contactes1 {
+        font-size: 3rem;
+    }
 
-  .contactes2, .contactes22, .contactes3, .contactes4 {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .contactes2,
+    .contactes22,
+    .contactes3,
+    .contactes4 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
