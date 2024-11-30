@@ -6,120 +6,13 @@
         <title>Admin Panel</title>
         <link
             rel="stylesheet"
-            href="{{ url_for('static', filename='shop.css')}}"
+            href="{{ url_for('static', filename='index.css')}}"
         />
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                color: #333;
-                margin: 0;
-                padding: 20px;
-                background-color: #f4f4f4;
-            }
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            h1,
-            h2 {
-                color: #2c3e50;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            .product-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 25px;
-                margin-bottom: 45px;
-            }
-            .product-card {
-                background-color: #fff;
-                border-radius: 6px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-            }
-            .product-image {
-                width: 100%;
-                height: 150px;
-                object-fit: cover;
-            }
-            .product-info {
-                padding: 13px;
-            }
-            .product-name {
-                margin: 0 0 10px;
-                font-size: 18px;
-            }
-            .product-description {
-                margin: 0 0 10px;
-                font-size: 14px;
-                color: #666;
-            }
-            .product-price {
-                font-weight: bold;
-                color: #2c3e50;
-            }
-            .cta-button {
-                display: inline-block;
-                padding: 8px 15px;
-                background-color: #3498db;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 4px;
-                transition: background-color 0.3s;
-            }
-            .cta-button:hover {
-                background-color: #2980b9;
-            }
-            .form-container {
-                background-color: #fff;
-                padding: 30px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            .form-group {
-                margin-bottom: 20px;
-            }
-            label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #34495e;
-            }
-            input[type="text"] {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                font-size: 16px;
-            }
-            input[type="text"]:focus {
-                outline: none;
-                border-color: #3498db;
-                box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-            }
-            button {
-                width: 100%;
-                padding: 10px;
-                background-color: #2ecc71;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            button:hover {
-                background-color: #27ae60;
-            }
-        </style>
     </head>
     <body>
         <nav>
             <ul class="menu">
+                <li><a href="/">Home</a></li>
                 <li><a href="/shop">Shop</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/services">Services</a></li>
