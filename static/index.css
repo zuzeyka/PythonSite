@@ -20,7 +20,7 @@ body {
     background-color: var(--background-color);
     margin: 0;
     line-height: 1.6;
-    padding: 20px;
+    padding: 0;
     font-family: "Poppins", sans-serif;
     color: var(--text-color);
     min-height: 100vh;
@@ -71,7 +71,7 @@ h2 {
 }
 .cta-button {
     display: inline-block;
-    padding: 8px 15px;s
+    padding: 8px 15px;
     background-color: #3498db;
     color: #fff;
     text-decoration: none;
