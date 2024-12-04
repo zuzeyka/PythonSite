@@ -47,7 +47,11 @@ def random_number():
 
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit_product(id):
-    return render_template('edit.html', id=id)
+    for i in products:
+        if i["id"] == id:
+            return render_template('edit.html', id=id, product=i)
+        else:
+            return redirect(url_for('admin'))
 
 @app.route('/admin', methods=['GET', 'POST'])
 def create_product():
