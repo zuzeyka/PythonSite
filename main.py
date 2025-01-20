@@ -47,11 +47,20 @@ def random_number():
 
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit_product(id):
+    product = 0
     for i in products:
         if i["id"] == id:
-            return render_template('edit.html', id=id, product=i)
-        else:
-            return render_template('admin_panel.html', products=products)
+            product = i
+    if request.method == 'POST':
+        name = request.form.get('name')
+        description = request.form.get('description') 
+        price = request.form.get('price')
+        image_url = request.form.get('image_url')
+        products[products.index(product)] = {"id": id, "name": name, "description": description, "price": price, "image_url": image_url}
+        save_products(products)
+        return render_template('admin_panel.html', products=products)
+    else:
+        return render_template('edit.html', id=id, product=product)
 
 @app.route('/admin', methods=['GET', 'POST'])
 def create_product():

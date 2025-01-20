@@ -24,7 +24,11 @@
         <div class="container">
             <h1>Edit Page</h1>
             <h2>You are editing {{ product["id"] }}</h2>
-            <form method="POST" action="/admin" class="form-container">
+            <form
+                method="POST"
+                action="/edit/{{ product['id'] }}"
+                class="form-container"
+            >
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input
