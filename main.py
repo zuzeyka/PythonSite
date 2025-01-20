@@ -53,7 +53,7 @@ def edit_product(id):
             product = i
     if request.method == 'POST':
         name = request.form.get('name')
-        description = request.form.get('description') 
+        description = request.form.get('description')
         price = request.form.get('price')
         image_url = request.form.get('image_url')
         products[products.index(product)] = {"id": id, "name": name, "description": description, "price": price, "image_url": image_url}
