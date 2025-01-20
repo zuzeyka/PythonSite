@@ -51,7 +51,7 @@ def edit_product(id):
         if i["id"] == id:
             return render_template('edit.html', id=id, product=i)
         else:
-            return redirect(url_for('admin'))
+            return render_template('admin_panel.html', products=products)
 
 @app.route('/admin', methods=['GET', 'POST'])
 def create_product():
@@ -76,11 +76,12 @@ def create_product():
 def delete_product(id):
     if id > 0:
         for i in products:
+            print(i)
             if i["id"] == id:
                 index = products.index(i)
         products.pop(index)
         save_products(products)
-    return redirect(url_for('admin'))
+    return render_template('admin_panel.html', products=products)
 
 if __name__ == '__main__':
     app.run()
