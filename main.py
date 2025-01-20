@@ -50,8 +50,8 @@ def edit_product(id):
     for i in products:
         if i["id"] == id:
             return render_template('edit.html', id=id, product=i)
-        else:
-            return render_template('admin_panel.html', products=products)
+    return render_template('admin_panel.html', products=products)
+
 
 @app.route('/admin', methods=['GET', 'POST'])
 def create_product():
