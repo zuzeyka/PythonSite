@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, request
 import random, json
 app = Flask(__name__)
 
@@ -44,6 +44,14 @@ def about():
 @app.route('/random')
 def random_number():
     return render_template("random.html", number=random.randint(0, 1000))
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit_product(id):
